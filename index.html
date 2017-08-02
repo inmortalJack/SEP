@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Base</title>
+	<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+	<link href="assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<style>
+th{
+text-align: center
+}
+fieldset{
+	padding-bottom: 30px;
+}
+#paso1,#paso2,#paso3,#paso4{
+	display:none;
+}
+.pull-center{
+	margin: auto;
+	display:block;
+}
+</style>
+
+<section class="container">
+	<br><br>
+<h4>Portal de consulta de alumnos</h4>
+<hr class="red">
+<fieldset id="paso0">
+	<p>El acceso a este portal le brindará las herramientas para darle seguimiento al estado de salud de su hijo, así como consejos para proporcionarle un mejor cuidado
+	</p>
+	<br><p> Para iniciar el proceso de clic aquí:</p>
+	<button id="validar0" class="btn btn-success pull-center">Iniciar</button>
+</fieldset>
+<fieldset id="paso1">
+	<legend>
+		<b>Paso 1 </b>
+		<Small> Ingresa la curp del alumno:</Small>
+	</legend>
+	<br>
+	<div class="container row">
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+			<input type="text" class="form-control" placeholder="Ingresa la curp" aria-describedby="basic-addon1">
+		</div>
+		<br>
+		<button id="validar1" class="btn btn-info pull-right">Validar</button>
+	</div>
+	<br>
+	<br>
+
+</fieldset>
+
+<fieldset  id="paso2">
+	<legend>
+		<b>Paso 2 </b>
+		<small> Ingresa el nombre de la escuela: </small>
+	</legend>
+	<br>
+	<div class="container row">
+		<div class="col-md-12">
+			<label>Nombre de la escuela</label>
+			<input type="text" class="form-control" placeholder="ingresa el nombre" aria-describedby="basic-addon1">
+		</div>
+
+	</div>
+	<br>
+	<button id="validar2" class="btn btn-info pull-right">Validar</button>
+	<br>
+</fieldset>
+<fieldset  id="paso3">
+	<legend>
+		<b>Paso 3 </b>
+		<small> Selecciona cuál es el maestro de tu hijo: </small>
+	</legend>
+	<br>
+	<div class="container row">
+		<div class="col-md-4">
+			<label>Nombre</label>
+			<input type="text" class="form-control" placeholder="ingresa el nombre" aria-describedby="basic-addon1">
+		</div>
+		<div class="col-md-4">
+			<label>Apellido Paterno</label>
+			<input type="text" class="form-control" placeholder="ingresa el primer apellido" aria-describedby="basic-addon1">
+		</div>
+		<div class="col-md-4">
+			<label>Apellido Materno</label>
+			<input type="text" class="form-control" placeholder="ingresa el segundo apellido" aria-describedby="basic-addon1">
+		</div>
+
+	</div>
+	<br>
+	<button id="validar3" class="btn btn-info pull-right">Validar</button>
+	<br>
+</fieldset>
+<fieldset id="paso4">
+	<legend><b>Paso 4</b>
+	<small> Ingresa las calificaciones del último periodo: </small>
+	</legend>
+	<br>
+	<div class="container row">
+	<table id="tabla_calificaciones" class="table">
+	<thead>
+		<tr>
+			<th>
+				Materia
+			</th>
+			<th>
+				1er Bimestre
+			</th>
+			<th>
+				2do Bimestre
+			</th>
+			<th>
+				3er Bimestre
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+				<tr>
+					<td>Español</td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>Matemáticas</td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>Ciencias Sociales</td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>Historia</td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>Educación física</td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+					<td><input type="number" class="form-control"></td>
+				</tr>
+		</tbody>
+	</table>
+	<button id="validar4" class="btn btn-success pull-right">Validar y terminar</button>
+	<br>
+	</div>
+	<div id="validacion_correcta" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+	<!-- Modal content-->
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Validación correcta</h4>
+		</div>
+		<div class="modal-body">
+				<h3> ¡Bienvenido! </h3>
+		 </div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+
+</div>
+</div>
+
+</fieldset>
+</section>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script>
+	var calificaciones = [[0,0,9,0],[0,8,0,0],[0,0,0,10],[0,0,8,0],[0,9,0,0]]
+		$(function(){
+			$('#validar0').click(function(){
+				$('#paso0').hide('fast');
+				$('#paso1').show('slow');
+			})
+		$('#validar1').click(function(){
+			$('#paso1').hide('fast');
+			$('#paso2').show('slow');
+		})
+		$('#validar2').click(function(){
+			$('#paso2').hide('fast');
+			$('#paso3').show('slow');
+		})
+		$('#validar3').click(function(){
+
+			$('#paso3').hide('fast');
+
+			$('#paso4').show('slow');
+		})
+		$('#validar4').click(function(){
+			$('#validacion_correcta').modal('show');
+		})
+		var i,j;
+		$('#tabla_calificaciones tbody tr').each(function(i){
+			console.log(i)
+			$(this).find('td').each(function(j){
+				if(calificaciones[i][j] != 0)
+					$(this).find('input').val(calificaciones[i][j])
+			});
+
+		})
+
+
+	})
+
+
+	</script>
+	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+
+
+</body>
+</html>
